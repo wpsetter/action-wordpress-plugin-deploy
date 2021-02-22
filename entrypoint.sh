@@ -50,7 +50,7 @@ SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
 
 # Set SVN_URL based on user input
 if [ -z "$SVN_URL" ]; then
-  GENERATE_ZIP=$SVN_URL;
+  SVN_URL=$SVN_URL;
 fi
 
 SVN_DIR="/github/svn-${SLUG}"
