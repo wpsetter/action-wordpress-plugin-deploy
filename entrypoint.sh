@@ -25,7 +25,7 @@ if [[ -z "$SVN_URL" ]]; then
 	exit 1
 fi
 
-SVN_URL = $SVN_URL
+SVN_URL=$SVN_URL
 
 # Set variables
 GENERATE_ZIP=false
