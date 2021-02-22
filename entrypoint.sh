@@ -47,6 +47,12 @@ fi
 echo "ℹ︎ ASSETS_DIR is $ASSETS_DIR"
 
 SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
+
+# Set SVN_URL based on user input
+if [ -z "$SVN_URL" ]; then
+  GENERATE_ZIP=$SVN_URL;
+fi
+
 SVN_DIR="/github/svn-${SLUG}"
 
 # Checkout just trunk and assets for efficiency
