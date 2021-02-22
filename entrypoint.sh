@@ -49,6 +49,11 @@ echo "ℹ︎ ASSETS_DIR is $ASSETS_DIR"
 SVN_URL="https://plugins.svn.wordpress.org/${SLUG}/"
 SVN_DIR="/github/svn-${SLUG}"
 
+# Set SVN_URL based on user input
+if [ -z "$SVN_URL" ]; then
+  SVN_URL=$SVN_URL;
+fi
+
 # Checkout just trunk and assets for efficiency
 # Tagging will be handled on the SVN level
 echo "➤ Checking out .org repository..."
