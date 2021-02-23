@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
+
 # Note that this does not use pipefail
 # because if the grep later doesn't match any deleted files,
 # which is likely the majority case,
