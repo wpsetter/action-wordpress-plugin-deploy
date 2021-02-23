@@ -1,7 +1,5 @@
 #!/bin/bash
 
-export GIT_DISCOVERY_ACROSS_FILESYSTEM=1
-
 # Note that this does not use pipefail
 # because if the grep later doesn't match any deleted files,
 # which is likely the majority case,
@@ -21,13 +19,6 @@ if [[ -z "$SVN_PASSWORD" ]]; then
 	echo "Set the SVN_PASSWORD secret"
 	exit 1
 fi
-
-if [[ -z "$SVN_URL" ]]; then
-	echo "Set the SVN_URL secret"
-	exit 1
-fi
-
-SVN_URL=$SVN_URL
 
 # Set variables
 GENERATE_ZIP=false
@@ -55,6 +46,7 @@ if [[ -z "$ASSETS_DIR" ]]; then
 fi
 echo "ℹ︎ ASSETS_DIR is $ASSETS_DIR"
 
+SVN_URL="https://crush.svn.beanstalkapp.com/${SLUG}/"
 SVN_DIR="/github/svn-${SLUG}"
 
 # Checkout just trunk and assets for efficiency
